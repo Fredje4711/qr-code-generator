@@ -67,7 +67,7 @@ button:hover {
 #qrCode {
     display: block;
     margin: 0 auto;
-    max-width: 200px;
+    max-width: 250px; /* Vergroten van de QR-code op desktop */
     height: auto;
 }
 
@@ -79,7 +79,17 @@ button:hover {
     margin-top: 20px;
 }
 
-/* Verander font-size bij mobiel */
+#popupTitle {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#downloadLink, button {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Vergroten voor mobiel */
 @media (max-width: 600px) {
     /* Verander de container margin en padding voor mobiel */
     .container {
@@ -97,12 +107,17 @@ button:hover {
         padding: 10px;
     }
 
-    /* Vergroot tekst op mobiel */
+    /* Vergroot tekst boven de QR-code en de knoppen onderaan voor mobiel */
     #popupTitle {
-        font-size: 32px; /* Groter voor mobiel */
+        font-size: 40px; /* Vergroot de titel voor mobiel */
     }
 
     #downloadLink, button {
-        font-size: 24px; /* Groter voor mobiel */
+        font-size: 28px; /* Vergroot de tekst van de knoppen voor mobiel */
+    }
+
+    /* Vergroot de QR-code op mobiel */
+    #qrCode {
+        max-width: 350px; /* Vergroot de QR-code op mobiel */
     }
 }
