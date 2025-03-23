@@ -18,13 +18,13 @@ function generateQRCode() {
 
         // HTML voor de popup
         var htmlContent = `
-            <div style="text-align:center; margin-top:20px; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-                <h2 id="popupTitle" style="font-size: ${isMobile ? '32px' : '20px'};">QR Code</h2>
-                <div id="qrCodePopup" style="margin-top: 20px;"></div>
+            <div style="text-align:center; margin-top:5px; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+                <h2 id="popupTitle" style="font-size: ${isMobile ? '42px' : '30px'};">QR Code</h2>
+                <div id="qrCodePopup" style="margin-top: 5px;"></div>
                 <br>
-                <a id="downloadLink" href="#" download="qr_code.png" style="font-size: ${isMobile ? '24px' : '14px'};">Download QR Code</a>
+                <a id="downloadLink" href="#" download="qr_code.png" style="font-size: ${isMobile ? '34px' : '24px'};">Download QR Code</a>
                 <br><br>
-                <button onclick="window.close()" style="font-size: ${isMobile ? '24px' : '14px'};">Sluit venster</button>
+                <button onclick="window.close()" style="font-size: ${isMobile ? '34px' : '24px'};">Sluit venster</button>
             </div>
         `;
         popupWindow.document.write(htmlContent);
