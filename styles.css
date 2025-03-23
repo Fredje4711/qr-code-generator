@@ -3,7 +3,7 @@ body {
     background-color: #23a9e4;  /* Achtergrondkleur van de gehele pagina */
     margin: 0;
     padding: 0;
-    color: white;  /* Zorgt ervoor dat de tekst op een witte achtergrond goed zichtbaar is */
+    color: white;  /* Zorgt ervoor dat de tekst goed zichtbaar is */
 }
 
 .container {
@@ -20,11 +20,11 @@ h1 {
 
 input, textarea, button {
     width: 100%;
-    padding: 15px;  /* Huidige padding behouden voor invoervelden en knoppen */
+    padding: 15px;  /* Houd de padding van invoervelden en knoppen normaal */
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 18px;  /* Huidige fontgrootte behouden voor invoervelden en knoppen */
+    font-size: 18px;  /* Normale grootte van invoervelden en knoppen */
 }
 
 button {
@@ -49,9 +49,8 @@ button:hover {
 }
 
 #qrCodePopup img {
-    max-width: 100%;  /* Zorg ervoor dat de QR-code niet breder is dan het scherm */
+    width: 400px;  /* De standaard grootte van de QR-code voor desktop */
     height: auto;
-    width: 400px;  /* Verhoog de QR-code naar 400px breed */
 }
 
 #downloadLink {
@@ -59,7 +58,7 @@ button:hover {
     margin-top: 20px;
     text-decoration: none;
     color: white;
-    font-size: 22px;  /* Verhoog de downloadlink grootte */
+    font-size: 22px;  /* Normale grootte voor de downloadlink */
     text-align: center;
 }
 
@@ -73,16 +72,16 @@ button:hover {
     }
 
     input, textarea, button {
-        font-size: 18px;  /* Fontgrootte voor invoervelden en knoppen blijft hetzelfde */
-        padding: 15px;  /* Padding voor invoervelden en knoppen blijft hetzelfde */
+        font-size: 18px;  /* De fontgrootte van invoervelden en knoppen op mobiel blijft normaal */
+        padding: 15px;  /* Padding van invoervelden en knoppen blijft normaal */
     }
 
     #qrCodePopup img {
-        width: 600px;  /* Verhoog de QR-code tot 600px breed voor mobiel */
+        width: 600px;  /* Vergroot de QR-code op mobiel */
         height: auto;
     }
 
     #downloadLink {
-        font-size: 24px;  /* Vergroot de downloadlink voor mobiel */
+        font-size: 24px;  /* Vergroot de downloadlink op mobiel */
     }
 }
