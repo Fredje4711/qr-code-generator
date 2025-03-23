@@ -67,57 +67,32 @@ button:hover {
 #qrCode {
     display: block;
     margin: 0 auto;
-    max-width: 250px; /* Vergroten van de QR-code op desktop */
+    max-width: 200px; /* Standaard grootte voor laptop */
     height: auto;
 }
 
-/* Flexbox voor centreren in de pop-up */
-#qrCodePopup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
 #popupTitle {
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 40px; /* Standaard voor laptop */
 }
 
 #downloadLink, button {
-    font-size: 18px;
-    margin-top: 10px;
+    font-size: 28px; /* Standaard voor laptop */
 }
 
-/* Vergroten voor mobiel */
+/* Veranderingen voor mobiel */
 @media (max-width: 600px) {
-    /* Verander de container margin en padding voor mobiel */
-    .container {
-        margin: 20px auto;
-        padding: 15px;
-    }
-
-    button {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    input[type="text"], input[type="email"], textarea {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    /* Vergroot tekst boven de QR-code en de knoppen onderaan voor mobiel */
-    #popupTitle {
-        font-size: 40px; /* Vergroot de titel voor mobiel */
-    }
-
-    #downloadLink, button {
-        font-size: 28px; /* Vergroot de tekst van de knoppen voor mobiel */
-    }
-
     /* Vergroot de QR-code op mobiel */
     #qrCode {
-        max-width: 350px; /* Vergroot de QR-code op mobiel */
+        max-width: 220px; /* Vergroot de QR-code met 10% op mobiel */
+    }
+
+    /* Vergroot de titel boven de QR-code voor mobiel */
+    #popupTitle {
+        font-size: 80px; /* Dubbel zo groot als eerder voor mobiel */
+    }
+
+    /* Vergroot de knoppen onder de QR-code voor mobiel */
+    #downloadLink, button {
+        font-size: 56px; /* Dubbel zo groot als eerder voor mobiel */
     }
 }
