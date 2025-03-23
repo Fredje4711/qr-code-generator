@@ -67,32 +67,36 @@ button:hover {
 #qrCode {
     display: block;
     margin: 0 auto;
-    max-width: 200px; /* Standaard grootte voor laptop */
+    max-width: 200px;
     height: auto;
 }
 
-#popupTitle {
-    font-size: 40px; /* Standaard voor laptop */
-}
-
-#downloadLink, button {
-    font-size: 28px; /* Standaard voor laptop */
-}
-
-/* Veranderingen voor mobiel */
+/* Specifieke stijlen voor gsm */
 @media (max-width: 600px) {
-    /* Vergroot de QR-code op mobiel */
+    /* Verander de grootte van de QR-code op gsm */
     #qrCode {
-        max-width: 220px; /* Vergroot de QR-code met 10% op mobiel */
+        width: 240px;  /* Maak de QR-code 20% groter */
     }
 
-    /* Vergroot de titel boven de QR-code voor mobiel */
-    #popupTitle {
-        font-size: 80px; /* Dubbel zo groot als eerder voor mobiel */
+    /* Maak de tekst boven de QR-code groter */
+    #qrCodePopup h2 {
+        font-size: 48px;  /* Maak de tekst "QR Code" 3 keer groter */
     }
 
-    /* Vergroot de knoppen onder de QR-code voor mobiel */
-    #downloadLink, button {
-        font-size: 56px; /* Dubbel zo groot als eerder voor mobiel */
+    /* Maak de links onder de QR-code groter */
+    #qrCodePopup a {
+        font-size: 24px;  /* Maak de tekst van de links groter */
+    }
+
+    /* Verklein de knoppen */
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    /* Verklein de invoervelden */
+    input[type="text"], input[type="email"], textarea {
+        font-size: 14px;
+        padding: 10px;
     }
 }
