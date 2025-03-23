@@ -1,43 +1,36 @@
 function generateQRCode() {
-    var email = document.getElementById("email").value;
-    var subject = document.getElementById("subject").value;
-    var message = document.getElementById("message").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const body = document.getElementById("body").value;
 
-    if (email && subject && message) {
-        var mailtoLink = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
-
-        // Nieuwe pop-up venster openen
-        var popupWindow = window.open("", "QR Code", "width=400,height=400");
-
-        // HTML voor de popup
-        var htmlContent = `
-            <div style="text-align:center; margin-top:20px;">
-                <h2>QR Code</h2>
-                <div id="qrCodePopup"></div>
-                <br>
-                <a id="downloadLink" href="#" download="qr_code.png">Download QR Code</a>
-                <br><br>
-                <button onclick="window.close()">Sluit venster</button>
-            </div>
-        `;
-        popupWindow.document.write(htmlContent);
-
-        // QR-code genereren in de pop-up
-        var qr = new QRCode(popupWindow.document.getElementById("qrCodePopup"), {
+    // Controleer of alle velden ingevuld zijn
+    if (email && subject && body) {
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Verberg de "Genereer QR Code" knop en toon de QR-code
+        document.getElementById("generateQRBtn").style.display = "none";
+        document.getElementById("qrCodePopup").style.display = "block";
+        
+        // Genereer de QR-code met de grotere dimensies
+        const qrCode = new QRCode(document.getElementById("qrCodePopup"), {
             text: mailtoLink,
-            width: 200,
-            height: 200
+            width: 1200,  // Vergroot de QR-code
+            height: 1200, // Vergroot de QR-code
         });
 
-        // Set download link for the QR code
-        var canvas = popupWindow.document.querySelector("canvas");
-        var qrDataUrl = canvas.toDataURL("image/png");
-        popupWindow.document.getElementById("downloadLink").href = qrDataUrl;
+        // Toon de download link
+        document.getElementById("downloadLink").style.display = "block";
     } else {
         alert("Vul alstublieft alle velden in.");
     }
 }
 
 function resetForm() {
-    document.getElementById("qrForm").reset();
+    // Reset alle velden en verborgen secties
+    document.getElementById("email").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("body").value = "";
+    document.getElementById("qrCodePopup").style.display = "none";
+    document.getElementById("downloadLink").style.display = "none";
+    document.getElementById("generateQRBtn").style.display = "inline-block";
 }
