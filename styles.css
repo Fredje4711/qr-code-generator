@@ -71,7 +71,17 @@ button:hover {
     height: auto;
 }
 
+/* Flexbox voor centreren in de pop-up */
+#qrCodePopup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Verander font-size bij mobiel */
 @media (max-width: 600px) {
+    /* Verander de container margin en padding voor mobiel */
     .container {
         margin: 20px auto;
         padding: 15px;
@@ -85,5 +95,14 @@ button:hover {
     input[type="text"], input[type="email"], textarea {
         font-size: 14px;
         padding: 10px;
+    }
+
+    /* Vergroot tekst op mobiel */
+    #popupTitle {
+        font-size: 32px; /* Groter voor mobiel */
+    }
+
+    #downloadLink, button {
+        font-size: 24px; /* Groter voor mobiel */
     }
 }
