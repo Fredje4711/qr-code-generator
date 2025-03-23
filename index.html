@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>QR Code Generator</h1>
+    <form id="qrForm">
+        <input type="email" id="email" placeholder="E-mail adres" required><br>
+        <input type="text" id="subject" placeholder="Onderwerp" required><br>
+        <textarea id="message" placeholder="Bericht" required></textarea><br>
+        <button type="button" onclick="generateQRCode()">Genereer QR Code</button>
+        <button type="button" class="reset-btn" onclick="resetForm()">Reset</button>
+    </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+<script src="scripts.js"></script>
+
+</body>
+</html>
