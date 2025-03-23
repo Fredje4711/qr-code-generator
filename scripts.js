@@ -19,21 +19,22 @@ function generateQRCode() {
         // HTML voor de popup
         var htmlContent = `
             <div style="text-align:center; margin-top:20px;">
-                <h2>QR Code</h2>
+                <h2 id="popupTitle" style="font-size: ${isMobile ? '24px' : '20px'};">QR Code</h2>
                 <div id="qrCodePopup"></div>
                 <br>
-                <a id="downloadLink" href="#" download="qr_code.png">Download QR Code</a>
+                <a id="downloadLink" href="#" download="qr_code.png" style="font-size: ${isMobile ? '18px' : '14px'};">Download QR Code</a>
                 <br><br>
-                <button onclick="window.close()">Sluit venster</button>
+                <button onclick="window.close()" style="font-size: ${isMobile ? '18px' : '14px'};">Sluit venster</button>
             </div>
         `;
         popupWindow.document.write(htmlContent);
 
         // QR-code genereren in de pop-up, groter voor mobiel
+        var qrSize = isMobile ? 500 : 200; // Groter voor mobiel
         var qr = new QRCode(popupWindow.document.getElementById("qrCodePopup"), {
             text: mailtoLink,
-            width: isMobile ? 500 : 400, // Groter voor mobiel
-            height: isMobile ? 500 : 400  // Groter voor mobiel
+            width: qrSize,
+            height: qrSize
         });
 
         // Set download link for the QR code
