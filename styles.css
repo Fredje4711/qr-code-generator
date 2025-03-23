@@ -81,12 +81,12 @@ button:hover {
 
     /* Maak de tekst boven de QR-code groter */
     #qrCodePopup h2 {
-        font-size: 48px;  /* Maak de tekst "QR Code" 3 keer groter */
+        font-size: 144px;  /* Maak de tekst "QR Code" 3 keer groter */
     }
 
     /* Maak de links onder de QR-code groter */
     #qrCodePopup a {
-        font-size: 24px;  /* Maak de tekst van de links 3 keer groter */
+        font-size: 72px;  /* Maak de tekst van de links 3 keer groter */
     }
 
     /* Verklein de knoppen */
