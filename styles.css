@@ -1,9 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #23a9e4; /* Achtergrondkleur van de gehele pagina */
+    background-color: #23a9e4;
     margin: 0;
     padding: 0;
-    color: white; /* Zorgt ervoor dat de tekst goed zichtbaar is */
+    color: white;
 }
 
 .container {
@@ -20,11 +20,11 @@ h1 {
 
 input, textarea, button {
     width: 100%;
-    padding: 15px; /* Houd de padding van invoervelden en knoppen normaal */
+    padding: 15px;
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 18px; /* Normale grootte van invoervelden en knoppen */
+    font-size: 18px;
 }
 
 button {
@@ -49,7 +49,7 @@ button:hover {
 }
 
 #qrCodePopup img {
-    width: 1200px; /* Drie keer groter dan eerder */
+    width: 1200px;
     height: auto;
 }
 
@@ -58,8 +58,7 @@ button:hover {
     margin-top: 20px;
     text-decoration: none;
     color: white;
-    font-size: 66px; /* Drie keer groter dan eerder */
-    text-align: center;
+    font-size: 66px;
 }
 
 #downloadLink:hover {
@@ -72,16 +71,16 @@ button:hover {
     }
 
     input, textarea, button {
-        font-size: 18px; /* De fontgrootte van invoervelden en knoppen op mobiel blijft normaal */
-        padding: 15px; /* Padding van invoervelden en knoppen blijft normaal */
+        font-size: 18px;
+        padding: 15px;
     }
 
     #qrCodePopup img {
-        width: 600px; /* Vergroot de QR-code op mobiel tot 600px breed */
+        width: 600px;
         height: auto;
     }
 
     #downloadLink {
-        font-size: 24px; /* Vergroot de downloadlink op mobiel */
+        font-size: 24px;
     }
 }
