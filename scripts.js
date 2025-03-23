@@ -6,8 +6,15 @@ function generateQRCode() {
     if (email && subject && message) {
         var mailtoLink = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
 
-        // Nieuwe pop-up venster openen
-        var popupWindow = window.open("", "QR Code", "width=400,height=400");
+        // Detecteer schermgrootte voor mobiele apparaten
+        var isMobile = window.innerWidth <= 600; // Schaal naar 600px voor mobiel, kan je aanpassen voor je wens
+
+        // Stel pop-up venster grootte in op basis van schermgrootte
+        var popupWidth = isMobile ? 500 : 600;  // Groter voor mobiel
+        var popupHeight = isMobile ? 500 : 400; // Groter voor mobiel
+
+        // Nieuwe pop-up venster openen met aangepaste grootte
+        var popupWindow = window.open("", "QR Code", "width=" + popupWidth + ",height=" + popupHeight);
 
         // HTML voor de popup
         var htmlContent = `
@@ -22,11 +29,11 @@ function generateQRCode() {
         `;
         popupWindow.document.write(htmlContent);
 
-        // QR-code genereren in de pop-up, vergroot naar 400x400 voor betere zichtbaarheid op mobiel
+        // QR-code genereren in de pop-up, groter voor mobiel
         var qr = new QRCode(popupWindow.document.getElementById("qrCodePopup"), {
             text: mailtoLink,
-            width: 400,
-            height: 400
+            width: isMobile ? 500 : 400, // Groter voor mobiel
+            height: isMobile ? 500 : 400  // Groter voor mobiel
         });
 
         // Set download link for the QR code
