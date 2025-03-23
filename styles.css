@@ -49,7 +49,7 @@ button:hover {
 }
 
 #qrCodePopup img {
-    width: 400px;  /* De standaard grootte van de QR-code voor desktop */
+    width: 1200px;  /* Drie keer groter dan eerder: nu 1200px breed op zowel mobiel als desktop */
     height: auto;
 }
 
@@ -58,7 +58,7 @@ button:hover {
     margin-top: 20px;
     text-decoration: none;
     color: white;
-    font-size: 22px;  /* Normale grootte voor de downloadlink */
+    font-size: 66px;  /* Drie keer groter dan eerder */
     text-align: center;
 }
 
@@ -77,11 +77,11 @@ button:hover {
     }
 
     #qrCodePopup img {
-        width: 600px;  /* Vergroot de QR-code op mobiel */
+        width: 1200px;  /* Vergroot de QR-code op mobiel tot 1200px breed */
         height: auto;
     }
 
     #downloadLink {
-        font-size: 24px;  /* Vergroot de downloadlink op mobiel */
+        font-size: 66px;  /* Vergroot de downloadlink op mobiel tot drie keer de vorige grootte */
     }
 }
