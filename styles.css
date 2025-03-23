@@ -75,8 +75,8 @@ button:hover {
 @media (max-width: 600px) {
     /* Verander de grootte van de QR-code op gsm */
     #qrCodePopup canvas {
-        width: 240px;  /* Maak de QR-code 20% groter */
-        height: 240px; /* Zorg ervoor dat de hoogte ook toeneemt */
+        width: 300px;  /* Maak de QR-code 20% groter */
+        height: 300px; /* Zorg ervoor dat de hoogte ook toeneemt */
     }
 
     /* Maak de tekst boven de QR-code groter */
