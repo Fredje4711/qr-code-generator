@@ -1,74 +1,89 @@
-/* Algemene stijl voor het hele scherm */
 body {
     font-family: Arial, sans-serif;
-    background-color: #23a9e4; /* Aangepaste achtergrondkleur */
-    color: white;
+    background-color: #23a9e4;
     margin: 0;
     padding: 0;
+    color: #fff;
 }
 
-/* Container voor het formulier */
 .container {
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
     margin: 50px auto;
     padding: 20px;
     background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Koptekst */
 h1 {
     text-align: center;
-    color: #333;
+    color: #23a9e4;
 }
 
-/* Stijl voor de formulierelementen */
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-input, textarea, button {
+input[type="text"], input[type="email"], textarea {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0;
+    padding: 12px;
+    margin: 10px 0;
     border: 2px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
-input, textarea {
-    font-size: 14px;
+textarea {
+    resize: none;
+    height: 100px;
 }
 
 button {
+    width: 100%;
+    padding: 15px;
     background-color: #23a9e4;
     color: white;
+    font-size: 18px;
     border: none;
-    font-size: 16px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #1c8ab1;
+    background-color: #1e8bbd;
 }
 
-/* Stijl voor de QR-code */
-.qr-code {
-    margin-top: 20px;
+.qr-container {
     text-align: center;
+    margin-top: 20px;
 }
 
-/* Verbeteren van het mobiele weergave */
+.reset-btn {
+    background-color: #f44336;
+}
+
+.reset-btn:hover {
+    background-color: #d32f2f;
+}
+
+#qrCode {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    height: auto;
+}
+
 @media (max-width: 600px) {
     .container {
-        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    input[type="text"], input[type="email"], textarea {
+        font-size: 14px;
         padding: 10px;
     }
 }
