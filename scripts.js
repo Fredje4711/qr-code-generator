@@ -7,7 +7,7 @@ function generateQRCode() {
         var mailtoLink = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
 
         // Detecteer schermgrootte voor mobiele apparaten
-        var isMobile = window.innerWidth <= 600; // Schaal naar 600px voor mobiel, kan je aanpassen voor je wens
+        var isMobile = window.innerWidth <= 700; // Schaal naar 600px voor mobiel, kan je aanpassen voor je wens
 
         // Stel pop-up venster grootte in op basis van schermgrootte
         var popupWidth = isMobile ? 500 : 600;  // Groter voor mobiel
