@@ -3,39 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Verbindt de CSS met de HTML -->
+    <title>QR Code Generator Test</title>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 </head>
 <body>
 
-    <div class="container">
-        <h1>QR Code Generator</h1>
+    <h1>QR Code Test</h1>
 
-        <div class="form-group">
-            <label for="email">E-mailadres</label>
-            <input type="email" id="email" placeholder="Vul je e-mailadres in" required>
-        </div>
+    <input type="text" id="email" placeholder="Vul je e-mailadres in">
+    <input type="text" id="subject" placeholder="Onderwerp">
+    <textarea id="body" placeholder="Bericht"></textarea>
 
-        <div class="form-group">
-            <label for="subject">Onderwerp</label>
-            <input type="text" id="subject" placeholder="Vul het onderwerp in" required>
-        </div>
+    <button onclick="generateQRCode()">Genereer QR Code</button>
 
-        <div class="form-group">
-            <label for="body">Bericht</label>
-            <textarea id="body" placeholder="Vul het bericht in" required></textarea>
-        </div>
+    <div id="qr-code"></div>
 
-        <div class="form-group">
-            <button onclick="generateQRCode()">Genereer QR Code</button>
-            <button onclick="resetForm()">Reset</button>
-        </div>
+    <script>
+        function generateQRCode() {
+            var email = document.getElementById("email").value;
+            var subject = document.getElementById("subject").value;
+            var body = document.getElementById("body").value;
 
-        <div id="qr-code" class="qr-code"></div>
+            if (email && subject && body) {
+                var qrText = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    </div>
-
-    <script src="script.js"></script> <!-- Verbindt de JavaScript met de HTML -->
+                // Minimalistische QR-code genereren
+                var qrCode = new QRCode(document.getElementById("qr-code"), {
+                    text: qrText,
+                    width: 128, // Kleine QR code voor test
+                    height: 128
+                });
+            } else {
+                alert("Vul alle velden in voordat je de QR-code genereert.");
+            }
+        }
+    </script>
 
 </body>
 </html>
