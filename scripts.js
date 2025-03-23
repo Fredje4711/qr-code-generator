@@ -22,11 +22,11 @@ function generateQRCode() {
         `;
         popupWindow.document.write(htmlContent);
 
-        // QR-code genereren in de pop-up
+        // QR-code genereren in de pop-up, vergroot naar 400x400 voor betere zichtbaarheid op mobiel
         var qr = new QRCode(popupWindow.document.getElementById("qrCodePopup"), {
             text: mailtoLink,
-            width: 200,
-            height: 200
+            width: 400,
+            height: 400
         });
 
         // Set download link for the QR code
