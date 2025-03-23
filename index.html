@@ -4,25 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Generator</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0.0/jquery.qrcode.min.js"></script>
+    <link rel="stylesheet" href="styles.css"> <!-- Verbindt de CSS met de HTML -->
 </head>
 <body>
+
     <div class="container">
         <h1>QR Code Generator</h1>
-        <input type="email" id="email" placeholder="Uw e-mailadres" required>
-        <input type="text" id="subject" placeholder="Onderwerp" required>
-        <textarea id="body" placeholder="Bericht voor e-mail" required></textarea>
-        <button id="generateQRBtn" onclick="generateQRCode()">Genereer QR Code</button>
-        
-        <div id="qrCodePopup" style="display:none;">
-            <div id="qrCode"></div>
-            <a id="downloadLink" href="#" style="display:none;" download="qrcode.png">Download QR Code</a>
+
+        <div class="form-group">
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" placeholder="Vul je e-mailadres in" required>
         </div>
-        <button class="reset-btn" onclick="resetForm()">Reset</button>
+
+        <div class="form-group">
+            <label for="subject">Onderwerp</label>
+            <input type="text" id="subject" placeholder="Vul het onderwerp in" required>
+        </div>
+
+        <div class="form-group">
+            <label for="body">Bericht</label>
+            <textarea id="body" placeholder="Vul het bericht in" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <button onclick="generateQRCode()">Genereer QR Code</button>
+            <button onclick="resetForm()">Reset</button>
+        </div>
+
+        <div id="qr-code" class="qr-code"></div>
+
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Verbindt de JavaScript met de HTML -->
+
 </body>
 </html>
