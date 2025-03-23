@@ -20,17 +20,17 @@ h1 {
 
 input, textarea, button {
     width: 100%;
-    padding: 20px;  /* Vergroot de padding van de invoervelden en knoppen */
+    padding: 15px;  /* Huidige padding behouden voor invoervelden en knoppen */
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 24px;  /* Verhoog de lettergrootte van invoervelden en knoppen */
+    font-size: 18px;  /* Huidige fontgrootte behouden voor invoervelden en knoppen */
 }
 
 button {
     background-color: white;
     color: #23a9e4;
-    font-size: 24px;
+    font-size: 18px;
     cursor: pointer;
 }
 
@@ -49,8 +49,9 @@ button:hover {
 }
 
 #qrCodePopup img {
-    width: 400px;  /* Verhoog de grootte van de QR-code */
+    max-width: 100%;  /* Zorg ervoor dat de QR-code niet breder is dan het scherm */
     height: auto;
+    width: 400px;  /* Verhoog de QR-code naar 400px breed */
 }
 
 #downloadLink {
@@ -58,7 +59,7 @@ button:hover {
     margin-top: 20px;
     text-decoration: none;
     color: white;
-    font-size: 24px;  /* Verhoog de grootte van de downloadlink */
+    font-size: 22px;  /* Verhoog de downloadlink grootte */
     text-align: center;
 }
 
@@ -72,12 +73,8 @@ button:hover {
     }
 
     input, textarea, button {
-        font-size: 28px;  /* Verhoog de fontgrootte verder voor mobiel */
-        padding: 25px;  /* Verhoog de padding voor mobiel */
-    }
-
-    button {
-        font-size: 28px;
+        font-size: 18px;  /* Fontgrootte voor invoervelden en knoppen blijft hetzelfde */
+        padding: 15px;  /* Padding voor invoervelden en knoppen blijft hetzelfde */
     }
 
     #qrCodePopup img {
@@ -86,6 +83,6 @@ button:hover {
     }
 
     #downloadLink {
-        font-size: 28px;  /* Vergroot de downloadlink voor mobiel */
+        font-size: 24px;  /* Vergroot de downloadlink voor mobiel */
     }
 }
