@@ -12,7 +12,8 @@ function generateQRCode() {
         document.getElementById("qrCodePopup").style.display = "block";
         
         // Genereer de QR-code met de grotere dimensies
-        const qrCode = new QRCode(document.getElementById("qrCodePopup"), {
+        $("#qrCode").empty(); // Verwijder de vorige QR-code (indien aanwezig)
+        $("#qrCode").qrcode({
             text: mailtoLink,
             width: 1200,  // Vergroot de QR-code
             height: 1200, // Vergroot de QR-code
@@ -20,6 +21,7 @@ function generateQRCode() {
 
         // Toon de download link
         document.getElementById("downloadLink").style.display = "block";
+        document.getElementById("downloadLink").setAttribute("href", `data:image/png;base64,${$("#qrCode img")[0].src.split(',')[1]}`);
     } else {
         alert("Vul alstublieft alle velden in.");
     }
