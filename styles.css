@@ -129,4 +129,12 @@ button:hover {
         font-size: 0.8em; /* Nog kleiner op mobiel */
         padding: 8px;
     }
+
+    .footer a {
+        display: inline-block; /* Zorg ervoor dat de link inline blijft */
+    }
+
+    .website-icon {
+        font-size: 1em; /* Pas de grootte van het icoon aan voor mobiel */
+    }
 }

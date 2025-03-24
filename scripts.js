@@ -52,11 +52,11 @@ function generateQRCode() {
                 <br><br>
                 <button onclick="window.close()">Sluit venster</button>
 
-                <div style="text-align: center; margin-top: 20px; font-size: smaller;">
+                <div style="text-align: center; margin-top: 20px; font-size: 1.1em;">
                     Auteur: Diabetes Liga Midden-Limburg
                     <br>
-                    <a href="http://www.dlml.be" target="_blank" style="color: #23a9e4; text-decoration: none;">
-                        <span style="font-size: 1.2em; vertical-align: middle;">🌐</span> www.dlml.be
+                    <a href="http://www.dlml.be" target="_blank" style="color: #23a9e4; text-decoration: none; font-size: 1.2em;">
+                        <span style="font-size: 1.4em; vertical-align: middle;">🌐</span> www.dlml.be
                     </a>
                 </div>
 
