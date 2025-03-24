@@ -17,6 +17,10 @@ function generateQRCode() {
         // Open een popup-venster
         var popupWidth = isMobile ? 500 : 400;
         var popupHeight = isMobile ? 600 : 400;
+
+        // Verhoog de popup hoogte
+        popupHeight = isMobile ? 700 : 500;
+
         var popupWindow = window.open("", "QR Code", "width=" + popupWidth + ",height=" + popupHeight);
 
         // HTML voor de popup met gecentreerde QR-code en QRCode bibliotheek
@@ -24,11 +28,19 @@ function generateQRCode() {
             <html>
             <head>
                 <title>QR Code</title>
-                <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
                 <style>
                     body { text-align: center; margin-top: 20px; font-family: Arial, sans-serif; }
                     h2 { font-size: ${fontSizeTitle}; }
-                    a, button { font-size: ${fontSizeLink}; margin-top: 10px; }
+                    a, button { font-size: ${fontSizeLink}; margin-top: 10px; 
+                        color: #23a9e4;
+                        text-decoration: none;
+                    }
+
+                    a:hover {
+                        text-decoration: none; /* Geen onderstreping bij hover */
+                    }
+
                     #qrCodePopup { display: flex; justify-content: center; align-items: center; margin: 20px; }
                 </style>
             </head>
@@ -40,15 +52,31 @@ function generateQRCode() {
                 <br><br>
                 <button onclick="window.close()">Sluit venster</button>
 
+                <div style="text-align: center; margin-top: 20px; font-size: smaller;">
+                    Auteur: Diabetes Liga Midden-Limburg
+                    <br>
+                    <a href="http://www.dlml.be" target="_blank" style="color: #23a9e4; text-decoration: none;">
+                        <span style="font-size: 1.2em; vertical-align: middle;">🌐</span> www.dlml.be
+                    </a>
+                </div>
+
                 <script>
                     var qr = new QRCode(document.getElementById("qrCodePopup"), {
                         text: "${mailtoLink}",
                         width: ${qrSize},
                         height: ${qrSize}
                     });
-                    var canvas = document.querySelector("canvas");
-                    var qrDataUrl = canvas.toDataURL("image/png");
-                    document.getElementById("downloadLink").href = qrDataUrl;
+
+                    var downloadLink = document.getElementById("downloadLink");
+                    downloadLink.addEventListener("click", function(event) {
+                        var canvas = document.querySelector("canvas");
+                        var qrDataUrl = canvas.toDataURL("image/png");
+
+                        // Simulate download
+                        downloadLink.href = qrDataUrl;
+                        downloadLink.download = "qr_code.png";
+                    });
+
                 </script>
             </body>
             </html>
