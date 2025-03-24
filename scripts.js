@@ -3,6 +3,13 @@ function generateQRCode() {
     var subject = document.getElementById("subject").value;
     var message = document.getElementById("message").value;
 
+    // E-mail validatie
+    var emailRegex = /^[^\s@]+@[^\s@]+\.(com|org|net|be)$/;
+    if (!emailRegex.test(email)) {
+        alert("Vul een geldig e-mailadres in.");
+        return; // Stop de functie als het e-mailadres ongeldig is
+    }
+
     if (email && subject && message) {
         var mailtoLink = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
 
