@@ -71,33 +71,25 @@ button:hover {
     height: auto;
 }
 
-/* Specifieke stijlen voor gsm */
+/* Basis mobielvriendelijke stijlen */
 @media (max-width: 600px) {
-    /* Verander de grootte van de QR-code op gsm */
-    #qrCodePopup canvas, #qrCodePopup img {
-        width: 300px;  /* Maak de QR-code 20% groter */
-        height: 300px; /* Zorg ervoor dat de hoogte ook toeneemt */
+    .container {
+        margin: 20px auto;
+        padding: 15px;
     }
 
-    /* Maak de tekst boven de QR-code groter */
-    #qrCodePopup h2 {
-        font-size: 144px;  /* Maak de tekst "QR Code" 3 keer groter */
-    }
-
-    /* Maak de links onder de QR-code groter */
-    #qrCodePopup a {
-        font-size: 72px;  /* Maak de tekst van de links 3 keer groter */
-    }
-
-    /* Verklein de knoppen */
     button {
         font-size: 16px;
         padding: 12px;
     }
 
-    /* Verklein de invoervelden */
     input[type="text"], input[type="email"], textarea {
         font-size: 14px;
         padding: 10px;
+    }
+
+    #qrCodePopup h2,
+    #qrCodePopup a {
+        font-size: 24px;
     }
 }
